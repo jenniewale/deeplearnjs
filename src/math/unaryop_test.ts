@@ -89,7 +89,7 @@ import {Array1D, Array2D, Scalar} from './ndarray';
       a.dispose();
     });
 
-    it('propagates NaNs, bool', math => {
+    it('propagates NaNs, bool KREEGER', math => {
       const a = Array1D.new([1, 0, 0, 1, 0, util.NAN_BOOL], 'bool');
 
       const result = math.relu(a);
@@ -105,8 +105,8 @@ import {Array1D, Array2D, Scalar} from './ndarray';
   test_util.describeMathCPU('relu', [tests]);
   test_util.describeMathGPU('relu', [tests], [
     {'WEBGL_FLOAT_TEXTURE_ENABLED': true, 'WEBGL_VERSION': 1},
-    {'WEBGL_FLOAT_TEXTURE_ENABLED': true, 'WEBGL_VERSION': 2},
-    {'WEBGL_FLOAT_TEXTURE_ENABLED': false, 'WEBGL_VERSION': 1}
+    // {'WEBGL_FLOAT_TEXTURE_ENABLED': true, 'WEBGL_VERSION': 2},
+    // {'WEBGL_FLOAT_TEXTURE_ENABLED': false, 'WEBGL_VERSION': 1}
   ]);
 }
 

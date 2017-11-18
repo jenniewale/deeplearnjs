@@ -309,6 +309,7 @@ export function getProgramUniformLocationOrThrow(
 export function bindTextureToProgramUniformSampler(
     gl: WebGLRenderingContext, program: WebGLProgram, texture: WebGLTexture,
     uniformSamplerLocation: WebGLUniformLocation, textureUnit: number) {
+  console.log('textureUnit', textureUnit);
   callAndCheck(gl, () => bindTextureUnit(gl, texture, textureUnit));
   callAndCheck(gl, () => gl.uniform1i(uniformSamplerLocation, textureUnit));
 }

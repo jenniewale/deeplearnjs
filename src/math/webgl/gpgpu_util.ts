@@ -205,6 +205,7 @@ function uploadDataToTexture(
 
   webgl_util.validateTextureSize(gl, width, height);
   webgl_util.callAndCheck(gl, () => gl.bindTexture(gl.TEXTURE_2D, texture));
+  console.log('data', data);
   webgl_util.callAndCheck(
       gl,
       () => gl.texSubImage2D(
