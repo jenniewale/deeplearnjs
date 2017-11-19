@@ -246,7 +246,7 @@ const SHADER_PREFIX = `
   }
 
   float getNaN(vec4 values) {
-    return dot(vec4(1), values);
+    return dot(vec4(${tex_util.BYTE_NAN_VALUE}), values);
   }
 
   int round(float value) {

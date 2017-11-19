@@ -200,6 +200,7 @@ export function createStaticVertexBuffer(
   const buffer: WebGLBuffer = throwIfNull<WebGLBuffer>(
       gl, () => gl.createBuffer(), 'Unable to create WebGLBuffer');
   callAndCheck(gl, () => gl.bindBuffer(gl.ARRAY_BUFFER, buffer));
+  console.log('static-vertex data', data);
   callAndCheck(gl, () => gl.bufferData(gl.ARRAY_BUFFER, data, gl.STATIC_DRAW));
   return buffer;
 }
@@ -209,6 +210,7 @@ export function createStaticIndexBuffer(
   const buffer: WebGLBuffer = throwIfNull<WebGLBuffer>(
       gl, () => gl.createBuffer(), 'Unable to create WebGLBuffer');
   callAndCheck(gl, () => gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, buffer));
+  console.log('static-index data', data);
   callAndCheck(
       gl, () => gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, data, gl.STATIC_DRAW));
   return buffer;

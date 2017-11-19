@@ -289,6 +289,8 @@ export class GPGPUContext {
     this.throwIfDisposed();
     this.throwIfNoProgram();
     const gl = this.gl;
+    // 'uv' is bound here
+    console.log('attribLocations', attribLocations);
     gpgpu_util.bindVertexProgramAttributeStreams(
         gl, this.program, this.vertexBuffer, attribLocations);
     if (this.autoDebugValidate) {

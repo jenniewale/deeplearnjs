@@ -65,7 +65,7 @@ import {Array1D, Array2D, Scalar} from './ndarray';
       a.dispose();
     });
 
-    it('propagates NaNs, float32', math => {
+    it('propagates NaNs, float32 KREEGER', math => {
       const a = Array1D.new([1, -2, 0, 3, -0.1, NaN]);
 
       const result = math.relu(a);
@@ -77,7 +77,7 @@ import {Array1D, Array2D, Scalar} from './ndarray';
       a.dispose();
     });
 
-    it('propagates NaNs, int32', math => {
+    it('propagates NaNs, int32 KREEGER', math => {
       const a = Array1D.new([1, -2, 0, 3, -1, util.NAN_INT32], 'int32');
 
       const result = math.relu(a);
@@ -94,6 +94,7 @@ import {Array1D, Array2D, Scalar} from './ndarray';
 
       const result = math.relu(a);
 
+      console.log('result.getValues()', result.getValues());
       expect(result.dtype).toBe('bool');
       test_util.expectArraysClose(
           result.getValues(), new Uint8Array([1, 0, 0, 1, 0, util.NAN_BOOL]));
